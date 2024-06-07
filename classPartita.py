@@ -1,6 +1,8 @@
 import random
 from classMazzo import Carta
-from classGiocatore import Giocatore
+
+# from classGiocatore import Giocatore
+from Giocatore import Giocatore
 
 
 class Partita:
@@ -34,8 +36,8 @@ class Partita:
         return mazzo
 
     def GestisciTurno(self):
-        pass
-
-    def Turno(self, giocatore: Giocatore):
-        print(f"Turno di {giocatore._nome}")
-        giocatore.PescaCarte(self.mazzo, 2)
+        giocatore_corrente: Giocatore = self._giocatori[self.turno_corrente]
+        print(f"Turno di {giocatore_corrente._nome}")
+        giocatore_corrente.PescaCarte(self.mazzo, 2)
+        giocatore_corrente.menu_gioca_carta()
+        self.turno_corrente = (self.turno_corrente + 1) % len(self._giocatori)

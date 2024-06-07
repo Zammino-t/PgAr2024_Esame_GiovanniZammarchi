@@ -81,11 +81,6 @@ def main():
         nome = input("Inserisci il nome del giocatore: ")
         partita._giocatori.insert(0, nome)
 
-    """while True:
-        Inizializzazione()
-        if len(partita._giocatori) == 7:
-            return False"""
-
     # inizializza sceriffo
     personaggio = random.choice(
         dati_json["personaggi"]
@@ -99,6 +94,9 @@ def main():
     for i in range(3):
         nome = partita._giocatori[i - 1]
         partita._giocatori[i - 1] = SelezionaPersonaggio(partita, nome, i - 1)
+
+    while True:
+        partita.GestisciTurno()
 
 
 if __name__ == "__main__":
