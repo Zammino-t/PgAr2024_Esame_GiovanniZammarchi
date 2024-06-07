@@ -1,0 +1,2 @@
+class Giocatore:
+    pass
