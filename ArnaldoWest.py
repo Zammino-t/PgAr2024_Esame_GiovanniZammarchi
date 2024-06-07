@@ -2,7 +2,6 @@ import json
 from collections import deque
 import sys
 from kibo_pgar_lib import Menu
-from classGiocatore import Giocatore
 from classPartita import Partita
 import random
 
