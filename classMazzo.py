@@ -14,3 +14,7 @@ class Arma(Carta):
     def __init__(self, nome, distanza, valore, seme):
         self._distanza = distanza
         super().__init__(nome, valore, seme)
+
+    @property
+    def nome(self):
+        return self._nome

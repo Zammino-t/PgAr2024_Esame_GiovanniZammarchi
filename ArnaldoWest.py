@@ -91,9 +91,13 @@ def main():
         dati_json["personaggi"]
     )  # prende randomicamente un personaggio dalla lista personaggi
     partita._giocatori[-1] = Giocatore(
-        personaggio["nome"], "Sceriffo", personaggio["pf"], personaggio["descrizione"]
+        personaggio["nome"],
+        "Sceriffo",
+        personaggio["pf"] + 1,
+        personaggio["descrizione"],
     )
     for i in range(3):
+        nome = partita._giocatori[i - 1]
         partita._giocatori[i - 1] = SelezionaPersonaggio(partita, nome, i - 1)
 
 

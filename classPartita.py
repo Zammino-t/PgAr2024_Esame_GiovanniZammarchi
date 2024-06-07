@@ -7,14 +7,13 @@ class Partita:
     def __init__(self, dati_json) -> None:
         self.ruoli = ["sceriffo", "fuorilegge", "rinnegato", "vice"]
         self.mazzo = self.CreaMazzo()
-        self._giocatori = []
+        self._giocatori: list[Giocatore] = []
         self.personaggi = dati_json["personaggi"]
         self.armi = dati_json["armi"]
         self.carte = dati_json["carte"]
         self.turno_corrente = 0
 
     def IniziaGioco(self):
-        giocatore: Giocatore
         for giocatore in self._giocatori:
             giocatore.PescaCarte(self.mazzo, giocatore.pf)
 
